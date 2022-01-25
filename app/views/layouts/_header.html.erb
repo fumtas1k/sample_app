@@ -9,7 +9,14 @@
         <div class="navbar-nav">
           <%= link_to "Home", root_path, class: "nav-item nav-link" %>
           <%= link_to "Help", help_path, class: "nav-item nav-link" %>
-          <%= link_to "Log in", "#", class: "nav-item nav-link" %>
+          <% if logged_in? %>
+            <%= link_to "Profile", current_user, class: "nav-item nav-link" %>
+            <%= link_to "Settings", "#", class: "nav-item nav-link" %>
+            <hr>
+            <%= link_to "Log out", logout_path, method: :delete, class: "nav-item nav-link" %>
+          <% else %>
+            <%= link_to "Log in", login_path, class: "nav-item nav-link" %>
+          <% end %>
         </div>
       </div>
     </nav>
