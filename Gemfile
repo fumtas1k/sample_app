@@ -16,6 +16,8 @@ gem "faker"
 gem "image_processing"
 gem "mini_magick"
 gem "rexml"
+gem "will_paginate"
+gem "will_paginate-bootstrap4"
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

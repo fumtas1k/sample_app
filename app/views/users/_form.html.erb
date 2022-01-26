@@ -1,0 +1,16 @@
+<%= form_with(model: @user, local: true) do |f| %>
+  <%= render "shared/error_messages", user: @user %>
+  <%= f.label :name, class: "sr-only" %>
+  <%= f.text_field :name, class: "form-control", placeholder: :name, required: true, autofocus: true %>
+
+  <%= f.label :email, class: "sr-only" %>
+  <%= f.email_field :email, class: "form-control", placeholder: :email, required: true %>
+
+  <%= f.label :password, class: "sr-only" %>
+  <%= f.password_field :password, class: "form-control", placeholder: :password %>
+
+  <%= f.label :passowrd_confirmation, class: "sr-only" %>
+  <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirmation" %>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary btn-block" %>
+<% end %>
